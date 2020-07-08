@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>注册</title>
+<link href="../CSS/简约.css" rel="stylesheet" type="text/css" media="screen" /> 
+	<!--JS判断是否合法输入-->
+	<script>
+	    function validateForm(){
+            var x=document.forms["enter"]["realname"].value;
+            if (x==null || x==""){
+                alert("姓名必须填写");
+                return false;
+            }
+            var x=document.forms["enter"]["iddentity"].value;
+            if (x==null || x==""){
+                alert("身份证号必须填写");
+                return false;
+            }
+            var x=document.forms["enter"]["e-mail"].value;
+            if (x==null || x==""){
+                alert("邮箱必须填写");
+                return false;
+            }
+            var x=document.forms["enter"]["username"].value;
+            if (x==null || x==""){
+                alert("账户必须填写");
+                return false;
+            }
+            var x=document.forms["enter"]["password"].value;
+            if (x==null || x==""){
+                alert("密码必须填写");
+                return false;
+            }
+			var y=document.forms["enter"]["cpassword"].value;
+            if (x!=y){
+            alert("两次密码输入必须一致");
+            return false;
+            }
+        }
+    </script>
+	<noscript>你的浏览器不支持脚本!</noscript>
+	
+<style>
+.text h1{
+	font-family: "隶书";
+    font-size:50px;
+    color: black;
+	text-align:center;
+	padding: 0px 40px 10px 40px;
+	}
+.text h2{
+	font-family: "隶书";
+    font-size:25px;
+	padding: 30px 20px 0px;
+}
+.kuang
+{
+    width:290px;
+    margin:4px 10px;
+	margin-top:10px; 
+    height:30px;
+    border:2px solid #DCDCDC; 
+    font-size: 20px;
+    color: black;
+    outline:none;
+}
+.submitbutton
+{
+    font-family :"隶书";
+    font-size:20px;
+    margin-top:20px;
+    color: black;
+	margin:30px;
+}
+.submitbutton2{
+    font-size:20px;
+    color: black;
+	margin:10px;	
+}
+.register2
+{
+    opacity:0.8;
+    float:left;
+    position: relative;
+    top: 20px;
+    left: 43%;
+    width: 530px;
+    height: 800px;
+    margin-left: -225px;
+    overflow: visible;
+}
+</style>
+	
+</head>
+
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1>账号注册</h1>
+			<p> design by GWH<img src="../images/xlogo.png"/></p>
+		</div>
+		<div id="search">
+			<form action="https://www.baidu.com/baidu" target="_blank">
+				<fieldset>
+				<input type="text" name="word" id="search-text" size="15" placeholder="G一下，就知道" />
+				<input type="submit" value="GWH问询"  href="https://www.baidu.com/"/>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	</div>
+	<!-- end #header -->
+	<div id="menu">
+		<ul>
+			<li class="current_page_item"><a href="../index.html">首页</a></li>
+			<li><a href="1.入门阶梯.html">入门阶梯</a></li>
+			<li><a href="2.进阶研究.html">进阶研究</a></li>
+			<li><a href="3.登峰造极.html">登峰造极</a></li>
+			<li><a href="登录.html">登录/注册</a></li>
+			<li><a href="4.关于我们.html">关于我们</a></li>
+		</ul>
+	</div>
+	<!-- end #menu -->
+	<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">
+		<div id="content">
+			<div class="post">
+                <!--表单部分-->
+	            <div class="text">
+		            <h1>账号注册</h1>
+	                <hr/>
+					    <div class="register2">
+                            <form name="enter" action="安全提醒.html" onsubmit="return validateForm()">
+		                    <label><h2>真实姓名:<input class="kuang" type="text" name="realname"></h2></label>
+		                    <center>
+							<h2><label>
+				                <input type="radio" name="sex" value="female">男
+		                        </label><label>
+				                <input type="radio" name="sex" value="male">女
+		                        </label></h2>
+							</center>
+		                    <label><h2>身份证号:<input class="kuang" type="text" name="iddentity"></h2></label>
+		                    <label><h2>电子邮箱:<input class="kuang" type="text" name="e-mail"></h2></label>
+		                    <label><h2>用户名称:<input class="kuang" type="text" name="username"></h2></label>
+		                    <label><h2>输入密码:<input class="kuang" type="password" name="password"></h2></label>
+		                    <label><h2>检查密码:<input class="kuang" type="password" name="cpassword"></h2></label>
+		                    <h2>你想要从网站里获得什么信息?</h2>
+		                    <div class="submitbutton2">
+		                        <center>
+					                <p><label><input type="checkbox" name="etg"/>了解游戏</label>
+		                            <label><input type="checkbox" name="lmk"/>学习知识</label>
+		                            <label><input type="checkbox" name="cwm"/>互相交流</label></p>
+					            </center>
+					        </div>
+					        <center>
+                                <input class="submitbutton" type="reset" value="重置"/>
+	                            <input class="submitbutton" type="submit" value="加入我们"></p>
+		                    </center>
+                            </form>
+                        </div>
+                </div>
+            </div>
+		<div style="clear: both;">&nbsp;</div>
+		</div>
+		<!-- end #content -->
+		<div id="sidebar">
+					<h2>欲知星际争霸2，
+					<br/>&emsp;&emsp;&emsp;就上GWH网</h2>
+					<p><a href="../index.html">首页</a> > <strong>账号注册</strong></p>
+					<h3>&nbsp;&nbsp;欢迎浏览我们的网站</h3>
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	</div>
+	</div>
+	<!-- end #page -->
+	<div id="footer">
+		<p>参考资料来源:星际争霸2官方网站、星际争霸2维基百科、网易游戏频道专题站、哔哩哔哩弹幕网、星际2吧、百度百科、知乎。</p>
+	</div>
+	<!-- end #footer -->
+</div>
+
+</div>
+</body>
+</html>

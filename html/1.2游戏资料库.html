@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<style type="text/css">
+</style>
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>游戏资料库</title>
+<link href="../CSS/简约.css" rel="stylesheet" type="text/css" media="screen" /> 
+<script src="../JS/jquery.js"></script>
+<style>
+.text p{
+	margin: 0;
+	margin-top: -10px;
+	font-size: 15px;
+	line-height: 180%;
+	padding: 0px 40px 10px 40px;
+    text-indent:2em;
+}
+#title2{
+    font-size:25px;
+    font-weight:800;
+	padding: 0px 70px 10px 40px;
+	text-align:center;
+}
+
+#person img {
+    width: 20em;
+}
+#name {
+    font-size: 1em;
+}
+#picList {
+    display: inline-block;
+    width: 50em;
+    margin-top: 2.2em;
+	padding: 0px 70px 10px 114px;
+}
+#picList div {
+    display: inline-block;
+    border-radius: 2.5em;
+    height: 5em;
+    width: 5em;
+    cursor: pointer;
+    background-size: 100% 100%;
+}
+#picList div:not(:first-child) {
+            opacity: 0.3;
+
+        } 
+#picList div:not(:last-child) {
+            margin-right: 5em;
+        }
+table {
+            border-collapse: separate;
+            border-spacing: 2.4em 1.5em;
+        }
+        #sTile {
+            color: #83b148;
+
+        }
+        #sin div {
+            position: relative;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function () {
+            var data = {
+                "星灵": {
+                    name: "星灵",
+                    introduction1: "星灵又称神族，他们凭借其高度发达的科技和强大的灵能力量，一度将自己信奉为宇宙中最强大的种族，但与异虫的战争却将此信心粉碎殆尽。即便是最强大的战士，也无法只身对抗成千上万的虫群。对于星灵来说这个教训是痛苦的，因为他们是围绕着核心价值观建立起的千年文明。但异虫的对艾尔的入侵将星灵逼入了一个十字路口：一成不变接受毁灭和失败，或者拥抱改变获得存活和胜利。",
+					introduction2:"随着和异虫的战争愈发困难，星灵采取了新的战术和科技，并唤醒了很多早已尘封的远古武器。星灵从来不是依靠数量取胜的种族，他们通常使用机械战争武器来维持军队的数量。星灵战士有着无人可比的单兵作战能力，科技与可怕灵能力量的混合更是让他们在战场上如虎添翼。虽然如此，星灵必须依赖他们的机动性和出其不意的战术来强化自身的优势并避免拖入消耗战。星灵最大的优势之一是他们的舰队，多种多样的强大战舰足以让任何敌人化为灰烬。星灵的人口比另外两个种族少很多，只能依靠大量的机器人来充当战士。他们几乎从不制造任何建筑，而是利用探测器在地图上定位一个坐标，然后相应的建筑就会由神族太空运输舰传送过来，而传送的同时探测器便可开始修另一个建筑了。因此这个种族在修建筑时效率非常高。",
+					introduction3:"星灵的部队的生命值分为两部分，即SP和HP。SP会自动恢复，速度很快，但有总恢复量的限制，超不过最大SP值的3倍。因此星灵的队伍在大多数攻击中先消耗SP再消耗H P。与人类和异虫不同，星灵的部队单位除了生物和机械，还包括一些无属性的灵能单位。"
+				},
+                "人类": {
+                    name:"人类",
+                    introduction1: "人类是科普卢星区的新移民。他们的祖先是数世纪前来自地球的殖民远征军，是一支遭到政府抛弃的叛军。远征军的幸存者们建立了三个殖民地，也就是后来人类的三个中心集团：联邦、凯莫瑞安联合体以及尤摩扬护国军。在异虫入侵期间，革命领袖阿克图尔斯·蒙斯克率军推翻了腐朽的联邦政府。现在，人类帝国已经从联邦政府的废墟中崛起，并成为了一个以阿克图尔斯元首为首的强大势力。",
+                    introduction2: "由于被迫在星区内最严酷的环境中生存，人类逐渐适应，成为了生存大师。既没有星灵的发达科技，也没有异虫的天生神力，人类的军队由各种混合单位组成。从基本却高效的陆战队员到重型武装的战列巡航舰，人类单位靠着坚固的装甲、强大的火力及数量的优势在战线上活跃着。得益于地堡和攻城坦克，人类在防御上更是大放光彩。",
+                    introduction3: "人类兵营生产的单位均为生物，除了劫掠者均为轻甲；而机场和重工厂产出的单位都是机械单位。"
+                },
+                "异虫":{
+                    name: "异虫",
+                    introduction1: "异虫在狡猾的刀锋女王带领下，决定将恐惧散布到宇宙每一个角落，并威胁要吞噬任何胆敢阻碍他们的事物。当异虫第一次抵达科普卢星区时，他们全部听命于主宰，主宰是所有异虫的感知中枢。主宰通过一种阶级式的感知传输来控制每一只异虫的行为。尽管主宰的主要目标是吞噬并吸收高等的星灵，但它在人性上发现了有用但未被开发的材料。主宰通过利用一个强大的人类莎拉·凯瑞甘，进化出了一个独特的生物：刀锋女王。当星灵在异虫入侵艾尔时摧毁了主宰，刀锋女王成为了虫群新的主宰。",
+                    introduction2: "异虫是一个与人类及星灵截然不同的种族。它们通过感染其他种族从而将他们感化成异虫的一员。这些生物迅速且有选择地进化成了冷酷的杀戮机器，以此进一步地巩固了异虫的绝对统治地位。异虫不会利用科技来建造武器、装甲或飞船。取而代之的，异虫通过生物同化以及有计划的虫群变异来有效地武装自己。就连异虫的建筑其实也是由虫巢中的活体器官转化而来。异虫基地会散布菌毯，一种滋养并维持虫群殖民地的生化物质。菌毯治疗着异虫的单位并为他们提供移动速度加成。所有异虫地面单位都可以学习潜地能力。潜地的单位藏在无法看到的地下，等待着正确时机给予敌人致命一击。有些异虫单位甚至可以在潜地状态下在地下移动。",
+                    introduction3: "异虫的全部单位包括建筑都是生物，并且没有机械属性；与人类和星灵不同，所有的虫族的部队都是由孵化场中的“幼虫”变异而来，这些不停运动的幼虫即虫族生物的基本形态。"
+                }			
+            }
+            var name = document.getElementById("name");
+            var intro1 = document.getElementById("introduction1");
+            var intro2 = document.getElementById("introduction2");
+            var intro3 = document.getElementById("introduction3");
+            $("#picList div").click(function () {
+                $("#picList div").css({ "opacity": "0.3" });
+                this.style.opacity =1.0;
+                var str=this.getAttribute("name");
+                document.querySelector("#title2").innerText = str;
+                document.querySelector("#head").src = "1.2游戏资料库/图片素材/" + str + ".png";
+                name.innerText = data[str].name;
+                intro1.innerText = data[str].introduction1;
+                intro2.innerText = data[str].introduction2;
+                intro3.innerText = data[str].introduction3;
+            });
+
+        })
+    </script>
+</head>
+
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1>游戏资料库</h1>
+			<p> design by GWH<img src="../images/xlogo.png"/></p>
+		</div>
+		<div id="search">
+			<form action="https://www.baidu.com/baidu" target="_blank">
+				<fieldset>
+				<input type="text" name="word" id="search-text" size="15" placeholder="G一下，就知道" />
+				<input type="submit" value="GWH问询"  href="https://www.baidu.com/"/>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	</div>
+	<!-- end #header -->
+	<div id="menu">
+		<ul>
+			<li class="current_page_item"><a href="../index.html">首页</a></li>
+			<li><a href="1.入门阶梯.html">入门阶梯</a></li>
+			<li><a href="2.进阶研究.html">进阶研究</a></li>
+			<li><a href="3.登峰造极.html">登峰造极</a></li>
+			<li><a href="登录.html">登录/注册</a></li>
+			<li><a href="4.关于我们.html">关于我们</a></li>
+		</ul>
+	</div>
+	<!-- end #menu -->
+	<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">
+		<div id="content">
+			<div class="post">
+			    <div class="text">
+                        <div id="picList">
+                            <div name="星灵" style="background-image:url(1.2游戏资料库/图片素材/星灵.png);"></div>
+                            <div name="人类" style="background-image:url(1.2游戏资料库/图片素材/人类.png);"></div>
+                            <div name="异虫" style="background-image:url(1.2游戏资料库/图片素材/异虫.png)"></div>
+                    </div>
+						<div id="title2">星灵</div>
+                        <table style="display:inline-block;vertical-align:top;width:28em;">
+                            <tr>
+                                <td class="sTile" width="100">
+                                    <strong>种族名称：</strong>
+                                </td>
+                                <td id="name"  width="300">
+                                    星灵
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="sTile" width="100">
+                                    <strong>种族介绍：</strong>
+                                </td>
+                                <td width="300">&nbsp;</td>
+							</tr>
+                        </table>
+                        <img id="head" style="display:inline-block;width:13em;padding:10px;float:right;padding: 0px 100px 0px 40px;" src="1.2游戏资料库/图片素材/星灵.png" />
+						<p id="introduction1">星灵又称神族，他们凭借其高度发达的科技和强大的灵能力量，一度将自己信奉为宇宙中最强大的种族，但与异虫的战争却将此信心粉碎殆尽。即便是最强大的战士，也无法只身对抗成千上万的虫群。对于星灵来说这个教训是痛苦的，因为他们是围绕着核心价值观建立起的千年文明。但异虫的对艾尔的入侵将星灵逼入了一个十字路口：一成不变接受毁灭和失败，或者拥抱改变获得存活和胜利。</p>
+                        <p id="introduction2">随着和异虫的战争愈发困难，星灵采取了新的战术和科技，并唤醒了很多早已尘封的远古武器。星灵从来不是依靠数量取胜的种族，他们通常使用机械战争武器来维持军队的数量。星灵战士有着无人可比的单兵作战能力，科技与可怕灵能力量的混合更是让他们在战场上如虎添翼。虽然如此，星灵必须依赖他们的机动性和出其不意的战术来强化自身的优势并避免拖入消耗战。星灵最大的优势之一是他们的舰队，多种多样的强大战舰足以让任何敌人化为灰烬。星灵的人口比另外两个种族少很多，只能依靠大量的机器人来充当战士。他们几乎从不制造任何建筑，而是利用探测器在地图上定位一个坐标，然后相应的建筑就会由神族太空运输舰传送过来，而传送的同时探测器便可开始修另一个建筑了。因此这个种族在修建筑时效率非常高。</p>
+						<p id="introduction3">星灵的部队的生命值分为两部分，即SP和HP。SP会自动恢复，速度很快，但有总恢复量的限制，超不过最大SP值的3倍。因此星灵的队伍在大多数攻击中先消耗SP再消耗H P。与人类和异虫不同，星灵的部队单位除了生物和机械，还包括一些无属性的灵能单位。</p>
+				</div>
+				</div>
+		<div style="clear: both;">&nbsp;</div>
+		</div>
+		<!-- end #content -->
+		<div id="sidebar">
+					<h2>欲知星际争霸2，
+					<br/>&emsp;&emsp;&emsp;就上GWH网</h2>
+					<p><a href="../index.html">首页</a> > <strong>入门阶梯</strong> > <strong>游戏资料库</strong></p>
+					<h2>索引</h2>
+					<ul>
+					<strong>
+						<li>一.星灵资料
+						    <p>&nbsp;&nbsp;<a href="1.2游戏资料库/1.2 星灵兵种.html">兵种</a> | <a href="1.2游戏资料库/1.1 星灵建筑.html">建筑</a> | <a href="1.2游戏资料库/1.3 星灵科技.html">科技</a></p></li>							
+						<li>二.人类资料
+						    <p>&nbsp;&nbsp;<a href="1.2游戏资料库/2.2 人类兵种.html">兵种</a> | <a href="1.2游戏资料库/2.1 人类建筑.html">建筑</a> | <a href="1.2游戏资料库/2.3 人类科技.html">科技</a></p></li>
+						<li>三.异虫资料
+						    <p>&nbsp;&nbsp;<a href="1.2游戏资料库/3.2 异虫兵种.html">兵种</a> | <a href="1.2游戏资料库/3.1 异虫建筑.html">建筑</a> | <a href="1.2游戏资料库/3.3 异虫科技.html">科技</a></p></li>
+						<li><a href="1.2游戏资料库/4.0 机制.html"> 四.机制</a></li>
+					</strong>
+					</ul>
+					<h3>&nbsp;&nbsp;欢迎浏览我们的网站</h3>
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	</div>
+	</div>
+	<!-- end #page -->
+	<div id="footer">
+		<p> 参考资料来源:星际争霸2官方网站、星际争霸2维基百科、网易游戏频道专题站、哔哩哔哩弹幕网、星际2吧、百度百科、知乎。</p>
+	</div>
+	<!-- end #page -->
+</div>
+
+</div>
+</body>
+</html>

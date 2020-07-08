@@ -1,0 +1,103 @@
+body{
+	color:white;
+	overflow-y: scroll;
+	overflow-x : scroll;
+	position:relative;
+	width:100%;
+	height:100%;
+	background-color:;
+	background-image:url(../images/ym/bg.gif);
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+}
+.main {
+  display: block;
+  margin: 25px auto 0;
+  padding: 0 20px;
+  width: 980px;
+}
+.category-list li {
+  width: 296px;
+  height: 203px;
+  display: block;
+  margin-bottom: 25px;
+  margin-right: 25px;
+  overflow: hidden;
+  text-align: center;
+  color: #ffffff;
+  float: left;
+  font-weight: normal;
+}
+.category-list li:nth-child(1) {
+  background: url("../images/tubiao.png");
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  background-size: 888px 406px;
+}
+.category-list li:nth-child(2) {
+  background: url("../images/tubiao.png");
+  background-repeat: no-repeat;
+  background-position: -296px 0px;
+  background-size: 888px 406px;
+}
+.category-list li:nth-child(3) {
+  margin-right: 0;
+  background: url("../images/tubiao.png");
+  background-repeat: no-repeat;
+  background-position: -592px 0px;
+  background-size: 888px 406px;
+}
+/* CAtegory list, Middle row */
+.category-list li:nth-child(4) {
+  background: url("../images/tubiao.png");
+  background-repeat: no-repeat;
+  background-position: 0px -203px;
+  background-size: 888px 406px;
+}
+.category-list li:nth-child(5) {
+  background: url("../images/tubiao.png");
+  background-repeat: no-repeat;
+  background-position: -296px -203px;
+  background-size: 888px 406px;
+}
+.category-list li:nth-child(6) {
+  margin-right: 0;
+  background: url("../images/tubiao.png");
+  background-repeat: no-repeat;
+  background-position: -592px -203px;
+  background-size: 888px 406px;
+}
+/*
+.category-list li:nth-child(7) {
+  background: url("//theme.zdassets.com/theme_assets/272701/7b9b4892027754e9fae5d719f091b0a179ae1965.png");
+  background-repeat: no-repeat;
+  background-position: -296px -406px;
+  background-size: 888px 406px;
+  display:none;
+}
+.category-list li:nth-child(9n+8) {
+  margin-right: 0;
+  background: url("//theme.zdassets.com/theme_assets/272701/7b9b4892027754e9fae5d719f091b0a179ae1965.png");
+  background-repeat: no-repeat;
+  background-position: -592px -406px;
+  background-size: 888px 406px;
+  display:none;
+}
+*/
+.category-list li a {
+  border-bottom: 3px solid #ffffff;
+  margin-top: 65px;
+  padding: 11px;
+  color: inherit;
+  display: inline-block;
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+.category-list li a:hover,a:focus,a:active {
+  text-decoration: none;
+  color: #0066FF;
+}
+
+
+

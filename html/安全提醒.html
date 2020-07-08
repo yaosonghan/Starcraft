@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link href="../css/安全提醒.css" rel="stylesheet" >
+<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$(".contactusdiyou").hover(function() {
+		$(".hoverimg").attr("src","../images/logo.png");
+		$('.diyoumask').fadeIn();
+		$('.contactusdiyou').animate({right:'0'},300); 
+	}, function() {
+		$(".hoverimg").attr("src","../logo.png");
+		$('.contactusdiyou').animate({right:'-230px'},300,function(){});
+		$('.diyoumask').fadeOut();
+	});
+});
+</script>
+	<script type="text/javascript"> 
+        function linkOver()
+		{  
+            this.style.fontSize="22px"; 
+        } 
+        function linkOut()
+		{ 
+            this.style.fontSize="15px"; 
+        } 
+        window.onload=function()
+		{
+        var mylink1=document.getElementById("mylink1");
+        mylink1.onmouseover=linkOver;
+        mylink1.onmouseout=linkOut;
+        var mylink2=document.getElementById("mylink2");
+        mylink2.onmouseover=linkOver;
+        mylink2.onmouseout=linkOut;
+	    var mylink3=document.getElementById("mylink3");
+        mylink3.onmouseover=linkOver;
+        mylink3.onmouseout=linkOut;
+        }	
+    </script>
+	<noscript>你的浏览器不支持脚本!</noscript>
+    <title>提醒</title>
+</head>
+
+<body bgcolor="black">
+
+<div class="warning1">
+    <h1>GWH WARNING</h1>
+</div>
+<div class="warning2">
+	<p>&emsp;&emsp;当你在某些网页注册时，你的关键信息很可能被泄露，请您在日常生活中谨慎对待。当然，这只是个无害的静态网站。</p>
+</div>
+<!--链接部分-->
+<div style="right:-230px;" class="contactusdiyou">
+	<div class="hoverbtn">
+		<span>鼠</span><span>标</span><span>靠</span><span>近</span><span>我</span>
+		<img class="hoverimg" src="../images/突变因子.png" width="13px" height="9px">
+	</div>
+	<div class="conter">
+		<div class="con1"> 
+				<h2>接下来，你可以选择：</h2>
+		</div> 
+
+		<div class="lianjie">
+			<ul>
+		        <li><div id="mylink1"><a href="../index.html" style="color:silver;">前往本站主页</a></div></li>
+		        <li><div id="mylink2"><a href="登录.html" style="color:silver;">返回登录页面</a></div></li>
+		        <li><div id="mylink3"><a href="http://sc2.blizzard.cn/landing" style="color:silver;" target="_blank">进入游戏官网</a></div></li>
+	        </ul>
+
+		</div>
+		<div class="con2">
+	        <p>如果有兴趣，你还可以选择
+			    <abbr title="欢迎加入QQ群：751060225"><ins>加入我们（真）</ins></abbr>
+			</p>
+		</div>
+    </div>
+</div>
+
+</body>
+</html>

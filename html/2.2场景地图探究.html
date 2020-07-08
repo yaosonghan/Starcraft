@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>进阶研究——场景地图探究</title>
+<link href="../CSS/简约.css" rel="stylesheet" type="text/css" media="screen" /> 
+<script src="../JS/jquery.js"></script>
+<style>
+.text h2{
+	font-family: "隶书";
+    font-size:40px;
+    color: black;
+	text-align:center;
+	padding: 20px 40px 0px 40px;
+	}
+.text p{
+    font-weight:700;
+	margin: 0;
+	margin-top: 0;
+	font-size: 15px;
+	line-height: 180%;
+	padding: 2px 40px 0px 40px;
+    text-indent:2em;
+}
+.text .read h2{
+	padding: 70px 40px 0px 40px;
+}
+#title2{
+    font-size:25px;
+    font-weight:800;
+	padding: 0px 40px 10px 40px;
+	text-align:center;
+}
+
+#person img {
+    width: 20em;
+}
+#name {
+    font-size: 1em;
+}
+#picList {
+    display: inline-block;
+    width: 50em;
+    margin-top: 1em;
+}
+#picList div {
+    display: inline-block;
+    border-radius: 2.5em;
+    height: 5em;
+    width: 5em;
+    cursor: pointer;
+    background-size: 100% 100%;
+}
+#picList div:not(:first-child) {
+            opacity: 0.3;
+        } 
+#picList div:not(:last-child) {
+            margin-right: 1em;
+        }
+table {
+            border-collapse: separate;
+            border-spacing: 0.5em 1.5em;
+        }
+        #mapTile {
+            color: #83b148;
+
+        }
+        #map div {
+            position: relative;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function () {
+            var data = {
+                "滨海卫城": {
+                    name: "滨海卫城",
+                    introduction: "滨海卫城是一张注重宏观控制的小型地图。这张地图上垂直分布的三基地扩张点很容易获取和进行防守。地图的中央区域非常适合早期的直接对抗，而摧毁岩石则可以开创更多进攻路线。"
+                },
+                "国王藏宝地": {
+                    name:"国王藏宝地",
+                    introduction: "虽然国王藏宝地的地图很大，但双方主基地都集中在一小块区域中，所以随着游戏的进展，双方的活动空间可能会越来越窄。侦查、进攻和良好的包抄可能会是埋藏在这个海湾中的又一份宝藏。"
+                },
+                "雷鸟":{
+                    name: "雷鸟",
+                    introduction: "这张地图上的某些位置设置了价值5点晶体矿的矿点，工人能一次性采集掉它们。采集这些矿点还可以打开额外的扩张点，或发现进攻敌人的新线路。"
+                },
+                "赛博森林": {
+                    name: "赛博森林",
+                    introduction: "在这片神秘的森林里，您在清理掉周边区域的岩石前必须尤其注意通向对手基地的狭窄最快通路。主基地的地形极为开阔，所以必须小心敌人的空投以及潜伏在角落中的小规模部队。"
+                },
+				 "涡轮巡飞城": {
+                    name: "涡轮巡飞城",
+                    introduction: "涡轮巡飞城-天梯版上有一个抑制区域发生器，它会减缓效果范围内所有单位的移动速度。在这张小地图上，大量的抑制区域发生器会大幅减缓初期快攻的速度。"
+                },
+				"宿怨战场": {
+                    name: "宿怨战场",
+                    introduction: "由于这个人类城市中存在大片未被清理的废墟，宿怨战场拥挤的中央区域在大部队行进的过程中可能会造成负面影响。摧毁地图顶部和底部的岩石可以打开通往后期基地的新路线，所以也请尤其小心偷袭。"
+                },
+				"凯罗斯中转站": {
+                    name: "凯罗斯中转站",
+                    introduction: "紧要关头请做好准备，因为这张地图的快攻距离非常短。并且有备选路径可供选择，而且还没有瞭望塔协助侦查。"
+                }				
+            }
+            var name = document.getElementById("name");
+            var intro = document.getElementById("introduction");
+            $("#picList div").click(function () {
+                $("#picList div").css({ "opacity": "0.3" });
+                this.style.opacity =1.0;
+                var str=this.getAttribute("name");
+                document.querySelector("#title2").innerText = str;
+                document.querySelector("#head").src = "../images/map/" + str + ".jpg";
+                document.querySelector("#head2").src = "../images/map/" + str + "2.png";
+                name.innerText = data[str].name;
+                intro.innerText = data[str].introduction;
+            });
+
+        })
+</script>
+</head>
+
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1>场景地图探究</h1>
+			<p> design by GWH<img src="../images/xlogo.png"/></p>
+		</div>
+		<div id="search">
+			<form action="https://www.baidu.com/baidu" target="_blank">
+				<fieldset>
+				<input type="text" name="word" id="search-text" size="15" placeholder="G一下，就知道" />
+				<input type="submit" value="GWH问询"  href="https://www.baidu.com/"/>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	</div>
+	<!-- end #header -->
+	<div id="menu">
+		<ul>
+			<li class="current_page_item"><a href="../index.html">首页</a></li>
+            <li><a href="1.入门阶梯.html">入门阶梯</a></li>
+            <li><a href="2.进阶研究.html">进阶研究</a></li> 
+            <li><a href="3.登峰造极.html">登峰造极</a></li>
+			<li><a href="登录.html">登录/注册</a></li>
+            <li><a href="4.关于我们.html">关于我们</a></li>
+		</ul>
+	</div>
+	<!-- end #menu -->
+	<!-- end #menu -->
+	<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">
+		<div id="content">
+			<div class="post">
+			    <div class="text">
+                <h2>简介</h2>				
+			        <p>对于像星际争霸2这样的RTS游戏来说，除了单位，地图也很容易成为游戏平衡的最重要特征，有时甚至比单位后面的数值更重要。</p>
+	                <p>“星际争霸2”1v1模式下天梯地图共有7张，每张地图都各有特色。7张地图由系统随机分配其中的1张给一组对战的玩家。玩家至多可以禁用掉其中的3张，来使自己遇到被禁用的地图的概率大大降低。</p>
+	                <p>星际争霸2的天梯地图在每一个赛季进行一次更新。用几张全新的地图替换掉上个赛季天梯地图中的某几张，然后保留余下的，一起作为新赛季的天梯地图。</p>
+				<div class="read">
+				<h2>最新1v1天梯地图介绍</h2>
+                        <div id="picList">
+                            <div name="滨海卫城" style="background-image:url(../images/map/滨海卫城.jpg);"></div>
+                            <div name="国王藏宝地" style="background-image:url(../images/map/国王藏宝地.jpg);"></div>
+                            <div name="雷鸟" style="background-image:url(../images/map/雷鸟.jpg)"></div>
+                            <div name="赛博森林" style="background-image:url(../images/map/赛博森林.jpg)"></div>
+                            <div name="涡轮巡飞城" style="background-image:url(../images/map/涡轮巡飞城.jpg)"></div>
+                            <div name="宿怨战场" style="background-image:url(../images/map/宿怨战场.jpg)"></div>
+                            <div name="凯罗斯中转站" style="background-image:url(../images/map/凯罗斯中转站.jpg)"></div>
+							
+                    </div>
+                    <div id="map" style="margin-top:2.5em;">
+						<div id="title2">滨海卫城</div>
+                        <img id="head" style="display:inline-block;width:13em;padding:10px;" src="../images/map/滨海卫城.jpg" />
+                        <table style="display:inline-block;vertical-align:top;width:28em;">
+                            <tr>
+                                <td class="mapTile" width="80">
+                                    <strong>地图名称：</strong>
+                                </td>
+                                <td id="name"  width="300">
+                                    滨海卫城
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="mapTile" width="80">
+                                    <strong>地图介绍：</strong>
+                                </td>
+                                <td id="introduction" width="300">
+                                    滨海卫城是一张注重宏观控制的小型地图。这张地图上垂直分布的三基地扩张点很容易获取和进行防守。地图的中央区域非常适合早期的直接对抗，而摧毁岩石则可以开创更多进攻路线。
+                                </td>
+                            </tr>
+                        </table>
+						<div>
+                        <img id="head2"  width="100%"  src="../images/map/滨海卫城2.png" alt="地图2"/>
+						</div>
+                    </div>
+				</div>
+				</div>
+		</div>
+		<div style="clear: both;">&nbsp;</div>
+		</div>
+		<!-- end #content -->
+		<div id="sidebar">
+					<h2>欲知星际争霸2，
+					<br/>&emsp;&emsp;&emsp;就上GWH网</h2>
+					<p><a href="../index.html">首页</a> > <strong>进阶研究</strong> > <strong>场景地图探究</strong></p>
+					<h2>索引</h2>
+					<ul>
+					<strong>
+						<li><a href="2.1游戏平衡机制.html">游戏平衡机制</a></li>
+						<li><a href="2.2场景地图探究.html">场景地图探究</a></li> 
+						<li><a href="2.3合作任务模式.html">合作任务模式</a></li>
+					</strong>
+					</ul>
+					<h3>&nbsp;&nbsp;欢迎浏览我们的网站</h3>
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	</div>
+	</div>
+	<!-- end #page -->
+	
+	<div id="footer">
+		<p> 参考资料来源:星际争霸2官方网站、星际争霸2维基百科、网易游戏频道专题站、哔哩哔哩弹幕网、星际2吧、百度百科、知乎。</p>
+	</div>
+</div>
+</body>
+</html>

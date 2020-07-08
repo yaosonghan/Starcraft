@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>登录</title>
+<link href="../CSS/简约.css" rel="stylesheet" type="text/css" media="screen" /> 
+	
+<style>
+.text h1{
+	font-family: "隶书";
+    font-size:50px;
+    color: black;
+	text-align:center;
+	padding: 0px 40px 10px 40px;
+	}
+.text h2{
+	font-family: "隶书";
+    font-size:30px;
+	padding: 30px 40px 0px;
+}
+
+.kuang
+{
+    width:330px;
+    margin:4px 40px;
+	margin-top:10px; 
+    height:30px;
+    border:2px solid #DCDCDC; 
+    font-size: 20px;
+    color: black;
+    outline:none;
+}
+.submitbutton
+{
+    font-family :"隶书";
+    font-size:20px;
+    margin-top:20px;
+    color: black;
+	margin:40px;
+}
+.register1
+{
+    opacity:0.8;
+    float:left;
+    position: relative;
+    top: 20px;
+    left: 43%;
+    width: 400px;
+    height: 500px;
+    margin-left: -160px;
+    overflow: visible;
+}
+</style>
+	
+	<!--JS判断是否合法输入-->
+	<script>
+	    function validateForm(){
+            var x=document.forms["enter"]["username"].value;
+            if (x==null || x==""){
+                alert("账户必须填写");
+                return false;
+            }
+            var x=document.forms["enter"]["password"].value;
+            if (x==null || x==""){
+                alert("密码必须填写");
+                return false;
+            }
+        }
+    </script>
+	<!--字体大小改变-->
+	<script type="text/javascript"> 
+        function linkOver()
+		{  
+            this.style.fontSize="20px"; 
+        } 
+        function linkOut()
+		{ 
+            this.style.fontSize="15px"; 
+        } 
+        window.onload=function()
+		{
+        var mylink=document.getElementById("mylink");
+        mylink.onmouseover=linkOver;
+        mylink.onmouseout=linkOut;
+        }
+    </script>
+	<noscript>你的浏览器不支持脚本!</noscript>
+
+</head>
+
+
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1>账号登录</h1>
+			<p> design by GWH<img src="../images/xlogo.png"/></p>
+		</div>
+		<div id="search">
+			<form action="https://www.baidu.com/baidu" target="_blank">
+				<fieldset>
+				<input type="text" name="word" id="search-text" size="15" placeholder="G一下，就知道" />
+				<input type="submit" value="GWH问询"  href="https://www.baidu.com/"/>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	</div>
+	<!-- end #header -->
+	<div id="menu">
+		<ul>
+			<li class="current_page_item"><a href="../index.html">首页</a></li>
+			<li><a href="1.入门阶梯.html">入门阶梯</a></li>
+			<li><a href="2.进阶研究.html">进阶研究</a></li>
+			<li><a href="3.登峰造极.html">登峰造极</a></li>
+			<li><a href="登录.html">登录/注册</a></li>
+			<li><a href="4.关于我们.html">关于我们</a></li>
+		</ul>
+	</div>
+	<!-- end #menu -->
+	<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">
+		<div id="content">
+			<div class="post">
+
+                <!--表单部分-->
+	            <div class="text">
+				    <h1>账号登录</h1>
+	                <hr/>
+                    <div class="register1">
+	                    <form name="enter" action="../index.html" onsubmit="return validateForm()">
+		                <label>
+				        <h2>用户名：</h2>
+	                    <p><input  class="kuang" type="text" name="username"></p>
+			            </label>
+		                <label>
+				        <h2>密码：</h2>
+	                    <p><input  class="kuang" type="password" name="password"></p>
+			            </label>
+                        <center><input class="submitbutton" type="reset" value="重置"/>
+	                    <input class="submitbutton" type="submit" value="登录"/></center>
+                        </form>
+	                    <center>
+				        <div id="mylink">	
+	                    <h3><a href="../html/注册.html" style="color:#808080;" >注册账户，加入我们</a></h3>
+	                    </div>
+				        </center>
+                    </div>
+                </div>
+			</div>
+		<div style="clear: both;">&nbsp;</div>
+		</div>
+		<!-- end #content -->
+		<div id="sidebar">
+					<h2>欲知星际争霸2，
+					<br/>&emsp;&emsp;&emsp;就上GWH网</h2>
+					<p><a href="../index.html">首页</a> > <strong>账号登录</strong></p>
+					<h3>&nbsp;&nbsp;欢迎浏览我们的网站</h3>
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	</div>
+	</div>
+	<!-- end #page -->
+	<div id="footer">
+		<p>参考资料来源:星际争霸2官方网站、星际争霸2维基百科、网易游戏频道专题站、哔哩哔哩弹幕网、星际2吧、百度百科、知乎。</p>
+	</div>
+	<!-- end #footer -->
+</div>
+
+</div>
+</body>
+</html>

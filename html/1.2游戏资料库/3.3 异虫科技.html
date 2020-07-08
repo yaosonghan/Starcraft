@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>游戏资料库——异虫科技</title>
+<link rel="stylesheet" href="../../CSS/style.css">
+<link href="../../CSS/简约.css" rel="stylesheet" type="text/css" />
+<script src="../../JS/jquery.js"></script>
+<style>
+#person img {
+    width: 20em;
+}
+#title2 {
+    font-size: 2em;
+	text-align:center;
+}
+table{
+	padding: 20px 70px 10px 100px;
+}
+th{
+	text-align:left;
+	width=50;
+	font-size:20px;
+	font-weight:500;
+}
+td{
+	text-align:left;
+	width=300;
+	font-size:18px;
+}
+#text ul{
+	padding: 10px 70px 40px 123px;
+}
+#text li{
+	padding: 10px;
+}
+#text p{
+	text-align:right;
+	padding: 10px 90px 20px 10px;
+}
+#picList {
+    display: inline-block;
+    width: 50em;
+    margin-top: 1.2em;
+	padding: 0px 70px 10px 100px;
+}
+#picList div {
+    display: inline-block;
+    border-radius: 2.5em;
+    height: 5em;
+    width: 5em;
+    cursor: pointer;
+    background-size: 100% 100%;
+}
+#picList div:not(:first-child) {
+            opacity: 0.3;
+        } 
+#picList div:not(:last-child) {
+            margin-right: 1em;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function () {
+            var data = {
+                "异虫地面单位甲壳": {
+                    name: "异虫地面单位甲壳",
+                    introduction1: "C",
+					introduction2:"进化腔",
+					introduction3:"提高所有异虫地面单位的甲壳值。",
+					number1:"150",
+					number2:"150",
+					number3:"114",
+					number4:"225",
+					number5:"225",
+					number6:"136",
+					number7:"300",
+					number8:"300",
+					number9:"157"
+				},
+                "异虫近战攻击": {
+                    name: "异虫近战攻击",
+                    introduction1: "M",
+                    introduction2: "进化腔",
+                    introduction3: "提高所有异虫地面单位的近战攻击力。",
+					number1:"100",
+					number2:"100",
+					number3:"114",
+					number4:"150",
+					number5:"150",
+					number6:"136",
+					number7:"200",
+					number8:"200",
+					number9:"157"
+                },
+                "异虫喷射攻击":{
+                    name: "异虫喷射攻击",
+                    introduction1: "A",
+                    introduction2: "进化腔",
+                    introduction3: "提高所有异虫的喷射攻击力。",
+					number1:"100",
+					number2:"100",
+					number3:"114",
+					number4:"150",
+					number5:"150",
+					number6:"136",
+					number7:"200",
+					number8:"200",
+					number9:"157"
+                },
+		        "异虫飞行生物攻击": {
+                    name: "异虫飞行生物攻击",
+                    introduction1: "A",
+                    introduction2: "尖塔",
+                    introduction3: "提高所有异虫飞行生物的攻击力。",
+					number1:"100",
+					number2:"100",
+					number3:"114",
+					number4:"175",
+					number5:"175",
+					number6:"136",
+					number7:"250",
+					number8:"250",
+					number9:"157"
+                },
+			    "异虫飞行生物甲壳": {
+                    name: "异虫飞行生物甲壳",
+                    introduction1: "C",
+                    introduction2: "尖塔",
+                    introduction3: "提高所有异虫飞行生物的甲壳。",
+					number1:"150",
+					number2:"150",
+					number3:"114",
+					number4:"225",
+					number5:"225",
+					number6:"136",
+					number7:"300",
+					number8:"300",
+					number9:"157"
+                }
+            }
+            var name = document.getElementById("name");
+            var intro1 = document.getElementById("introduction1");
+            var intro2 = document.getElementById("introduction2");
+            var intro3 = document.getElementById("introduction3");
+            var num1 = document.getElementById("number1");			
+            var num2 = document.getElementById("number2");
+            var num3 = document.getElementById("number3");			
+            var num4 = document.getElementById("number4");
+            var num5 = document.getElementById("number5");			
+            var num6 = document.getElementById("number6");
+            var num7 = document.getElementById("number7");			
+            var num8 = document.getElementById("number8");
+            var num9 = document.getElementById("number9");			
+            $("#picList div").click(function () {
+                $("#picList div").css({ "opacity": "0.3" });
+                this.style.opacity =1.0;
+                var str=this.getAttribute("name");
+                document.querySelector("#title2").innerText = str;
+                document.querySelector("#head1").src = "图片素材/异虫/科技/" + str + "等级1.jpg";
+                document.querySelector("#head2").src = "图片素材/异虫/科技/" + str + "等级2.jpg";
+                document.querySelector("#head3").src = "图片素材/异虫/科技/" + str + "等级3.jpg";
+                num1.innerText = data[str].number1;
+                num2.innerText = data[str].number2;
+                num3.innerText = data[str].number3;
+                num4.innerText = data[str].number4;
+                num5.innerText = data[str].number5;
+                num6.innerText = data[str].number6;
+                num7.innerText = data[str].number7;
+                num8.innerText = data[str].number8;
+                num9.innerText = data[str].number9;
+                intro3.innerText = data[str].introduction3;
+                intro1.innerText = data[str].introduction1;
+                intro2.innerText = data[str].introduction2;
+                intro3.innerText = data[str].introduction3;
+            });
+
+        })
+    </script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1>异虫科技 </h1>
+			<p> design by GWH<img src="../../images/xlogo.png"/></p>
+		</div>
+		<div id="search">
+			<form action="https://www.baidu.com/baidu" target="_blank">
+				<fieldset>
+				<input type="text" name="word" id="search-text" size="15" placeholder="G一下，就知道" />
+				<input type="submit" value="GWH问询"  href="https://www.baidu.com/"/>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	</div>
+	<!-- end #header -->
+	<div id="menu">
+		<ul>
+			<li class="current_page_item"><a href="../../index.html">首页</a></li>
+			<li><a href="../1.入门阶梯.html">入门阶梯</a></li>
+			<li><a href="../2.进阶研究.html">进阶研究</a></li>
+			<li><a href="../3.登峰造极.html">登峰造极</a></li>
+			<li><a href="../登录.html">登录/注册</a></li>
+			<li><a href="../4.关于我们.html">关于我们</a></li>
+		</ul>
+	</div>
+	<!-- end #menu -->
+	<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">
+		<div id="content">
+			<div class="post">
+                <div class="container2">
+                    <p><a class="button2" href="#popup">查看科技树</a></p>
+                        <div class="popup" id="popup">
+                            <div class="popup-inner">
+                                <div class="popup__photo">
+                                    <img src="图片素材/异虫/科技/异虫科技树.png" alt="异虫科技树">
+                                </div>
+                            <a class="popup__close" href="#">X</a>
+                        </div>
+                    </div>
+                </div>
+                    <div id="picList">
+                        <div name="异虫地面单位甲壳" style="background-image:url(图片素材/异虫/科技/异虫地面单位甲壳等级1.jpg);"></div>
+                        <div name="异虫近战攻击" style="background-image:url(图片素材/异虫/科技/异虫近战攻击等级1.jpg);"></div>
+                        <div name="异虫喷射攻击" style="background-image:url(图片素材/异虫/科技/异虫喷射攻击等级1.jpg)"></div>
+                        <div name="异虫飞行生物攻击" style="background-image:url(图片素材/异虫/科技/异虫飞行生物攻击等级1.jpg);"></div>
+                        <div name="异虫飞行生物甲壳" style="background-image:url(图片素材/异虫/科技/异虫飞行生物甲壳等级1.jpg)"></div>
+                    </div>
+					<div id="title2">异虫地面单位甲壳</div>
+                    <table>
+                        <tr>
+                            <th>热键：</th>
+                            <td id="introduction1">C</td>
+                        </tr>
+                        <tr>
+                            <th>研发于：</th>
+                            <td id="introduction2">进化腔</td>
+						</tr>
+                        <tr>
+                            <th>作用：</th>
+                            <td id="introduction3">提高所有异虫地面单位的近战攻击力。</td>
+						</tr>
+                    </table>
+					<div id="text">
+		                <ul>
+			                <li>
+							<b>等级1（需要孵化场）</b>&emsp;&emsp;
+							    <img id="head1" src="图片素材/异虫/科技/异虫地面单位甲壳等级1.jpg" width="46" height="46" align="middle" />&emsp;&emsp;
+							    <img src="http://img1.cache.netease.com/game/img/starcraft2/icon01.png" width="14" height="14" /><span id="number1">150</span>&emsp; 
+							    <img src="http://img1.cache.netease.com/game/img/starcraft2/icon02.png" width="14" height="14" /><span id="number2">150</span>&emsp; 
+							    <img src="http://img1.cache.netease.com/game/img/starcraft2/icon04.png" width="14" height="14" /><span id="number3">114</span>
+							</li>
+			                <li>
+							    <b>等级2（需要：虫穴）</b>&emsp;&emsp;
+								<img  id="head2" src="图片素材/异虫/科技/异虫地面单位甲壳等级2.jpg" width="46" height="46" align="middle" />&emsp;&emsp;
+								<img src="http://img1.cache.netease.com/game/img/starcraft2/icon01.png" width="14" height="14" /><span id="number4">225</span>&emsp; 
+								<img src="http://img1.cache.netease.com/game/img/starcraft2/icon02.png" width="14" height="14" /><span id="number5">225</span>&emsp; 
+								<img src="http://img1.cache.netease.com/game/img/starcraft2/icon04.png" width="14" height="14" /><span id="number6">136</span>
+							</li>
+			                <li>
+							    <b>等级3（需要：主巢）</b>&emsp;&emsp;
+								<img id="head3" src="图片素材/异虫/科技/异虫地面单位甲壳等级3.jpg" width="46" height="46" align="middle"/>&emsp;&emsp;
+								<img src="http://img1.cache.netease.com/game/img/starcraft2/icon01.png" width="14" height="14" /><span id="number7">300</span>&emsp; 
+								<img src="http://img1.cache.netease.com/game/img/starcraft2/icon02.png" width="14" height="14" /><span id="number8">300</span>&emsp;
+								<img src="http://img1.cache.netease.com/game/img/starcraft2/icon04.png" width="14" height="14" /><span id="number9">157</span>
+							</li>					
+		                </ul>
+					    <p><a href="../1.2游戏资料库.html">返回游戏资料库</a></p>
+			        </div>
+				</div>
+		<div style="clear: both;">&nbsp;</div>
+		</div>
+		<!-- end #content -->
+		<div id="sidebar">
+					<h2>欲知星际争霸2，
+					<br/>&emsp;&emsp;&emsp;就上GWH网</h2>
+					<p><a href="../../index.html">首页</a> > <strong>入门阶梯</strong> > <strong>游戏资料库</strong> > <strong>异虫科技</strong></p>
+					<h2>索引</h2>
+					<ul>
+					<strong>
+						<li>一.星灵资料
+						    <p>&nbsp;&nbsp;<a href="1.2 星灵兵种.html">兵种</a> | <a href="1.1 星灵建筑.html">建筑</a> | <a href="1.3 星灵科技.html">科技</a></p></li>							
+						<li>二.人类资料
+						    <p>&nbsp;&nbsp;<a href="2.2 人类兵种.html">兵种</a> | <a href="2.1 人类建筑.html">建筑</a> | <a href="2.3 人类科技.html">科技</a></p></li>
+						<li>三.异虫资料
+						    <p>&nbsp;&nbsp;<a href="3.2 异虫兵种.html">兵种</a> | <a href="3.1 异虫建筑.html">建筑</a> | <a href="3.3 异虫科技.html">科技</a></p></li>
+						<li><a href="4.0 机制.html"> 四.机制</a></li>
+					</strong>
+					</ul>
+					<h3>&nbsp;&nbsp;欢迎浏览我们的网站</h3>
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	</div>
+	</div>
+	<!-- end #page -->
+	<div id="footer">
+		<p> 参考资料来源:星际争霸2官方网站、星际争霸2维基百科、网易游戏频道专题站、哔哩哔哩弹幕网、星际2吧、百度百科、知乎。</p>
+	</div>
+	<!-- end #footer -->
+</div>
+
+</body>
+</html>

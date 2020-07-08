@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>入门阶梯</title>
+<link href="../CSS/简约.css" rel="stylesheet" type="text/css" media="screen" /> 
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:none;}
+.zx_slider{position:relative;margin:0px auto 0 auto;width:925px;height:350px;overflow:hidden;border-radius:5px;}
+.zx_slider .imgbox{width:3750px;height:310px;position:absolute;left:5px;top:4px;}
+.zx_slider .imgbox img{float:left;width:750px;height:310px;}
+.zx_slider .png{width:1002px;height:350px;left:0px;top:0px;position:absolute;background:url(../images/ym/bg.png);_background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../images/ym/bg.png");}
+.zx_slider .lbtn{cursor:pointer;width:45px;height:55px;position:absolute;left:0px;bottom:-3px;background:url(../images/ym/l_btn.png);_background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/ym/l_btn.png");}
+.zx_slider .rbtn{cursor:pointer;width:45px;height:55px;position:absolute;left:580px;bottom:-3px;background:url(../images/ym/r_btn.png);_background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../images/ym/r_btn.png");}
+.zx_slider .btnbox{width:750px;height:60px;position:absolute;left:160px;bottom:0px;}
+.zx_slider .btnbox a{cursor:pointer;display:inline-block;float:left;width:126px;height:54px;margin:0 0 0 10px;}
+.zx_slider .btnbox a img{position:relative;display:inline;width:120px;height:48px;float:left;border:3px solid #392101;border-radius:2px;}
+.zx_slider .btnbox a .img_hover{border:3px solid 	#D19275;border-radius:2px;}
+.zx_slider .slider_p{overflow:hidden;width:160px;height:320px;position:absolute;right:15px;top:15px;}
+.hi_btn{width:740px;height:330px;position:absolute;left:0px;top:0px;display:block;}
+.sh {
+	font-size:18px;
+	text-align:center;
+	color:white;
+	padding: 20px 10px 10px 40px;
+}
+.p {
+	line-height:26px;
+	font-size:14px;
+	color:#696969;
+	padding: 0px 0px 20px 15px;
+}
+</style>
+<script type="text/javascript" src="../JS/jjyj.js"></script>
+
+</head>
+
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1>入门阶梯</h1>
+			<p> design by GWH<img src="../images/xlogo.png"/></p>
+		</div>
+		<div id="search">
+			<form action="https://www.baidu.com/baidu" target="_blank">
+				<fieldset>
+				<input type="text" name="word" id="search-text" size="15" placeholder="G一下，就知道" />
+				<input type="submit" value="GWH问询"  href="https://www.baidu.com/"/>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	</div>
+	<!-- end #header -->
+	<div id="menu">
+		<ul>
+			<li class="current_page_item"><a href="../index.html">首页</a></li>
+			<li><a href="1.入门阶梯.html">入门阶梯</a></li>
+			<li><a href="2.进阶研究.html">进阶研究</a></li>
+			<li><a href="3.登峰造极.html">登峰造极</a></li>
+			<li><a href="登录.html">登录/注册</a></li>
+			<li><a href="4.关于我们.html">关于我们</a></li>
+		</ul>
+	</div>
+	<!-- end #menu -->
+	<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">	
+	
+   <!--图片-->	
+    <div class="zx_slider">
+        <div class="imgbox">
+            <img alt="背景故事介绍" src="../images/三族.jpg" width="750" height="310" />
+            <img alt="游戏资料库" src="../images/暴雪.jpg" width="750" height="310" />
+         </div>
+        <div class="png"></div>
+        <!--链接-->	
+        <a href="1.1.1自由之翼故事.html" id="hi_btn0" class="hi_btn"></a>
+        <a href="1.2游戏资料库.html" id="hi_btn1" class="hi_btn"></a>
+        <div class="btnbox">
+            <a onmouseover="btn_m_over(0)">
+			    <abbr title="点击上方大图，深入了解背景故事介绍"><img alt="背景故事介绍" id="btn_img0" class="thumb" src="../images/三族.jpg" /></abbr>
+			</a>
+            <a onmouseover="btn_m_over(1)">
+			    <abbr title="点击上方大图，深入了解游戏资料库"><img alt="场景地图探究" id="btn_img1" class="thumb" src="../images/暴雪.jpg" /></abbr>
+			</a>
+        </div>		
+        <div class="lbtn"></div>
+        <div class="rbtn"></div>	
+        <div class="slider_p">		
+            <div id="slider_p0" class="slider_p_div">
+			    <div class="sh">
+			        背景故事介绍
+			    </div>
+			    <div class="p">&emsp;&emsp;《星际争霸Ⅱ》由暴雪娱乐在2010年7月27日推出，是该系列的第二部作品。《星际争霸Ⅱ》剧情上延续了《星际争霸》初代作品的剧情和世界观，三大种族一一登场，为了各自的生存，展开搏杀，战火烧遍整个星系。</div>
+		    </div>		
+            <div id="slider_p1" class="slider_p_div">
+			    <div class="sh">
+			        游戏资料库
+				</div>
+			    <div class="p"> &emsp;&emsp;这里包含了三大种族兵种、科技、建筑相关的详实资料。你可以从这里了解最新最全的游戏数据。</div>
+			</div>		
+        </div>	
+    </div>
+    <!--end 图片-->	
+		<div id="sidebar">
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	</div>
+	</div>
+
+	<!-- end #page -->
+
+	<div id="footer">
+		<p> 参考资料来源:星际争霸2官方网站、星际争霸2维基百科、网易游戏频道专题站、哔哩哔哩弹幕网、星际2吧、百度百科、知乎。</p>
+	</div>
+	<!-- end #footer -->
+</div>
+<script type="text/javascript">
+var slider_count=1;
+$(".slider_p_div").hide();
+$("#slider_p0").show();
+$(".hi_btn").hide();
+$("#hi_btn0").show();
+$(".img_hover").animate({bottom:'10px'});
+var slider_i=1;
+var m_over=true;
+
+function zx_slider(){
+	if(m_over){
+		if(slider_i<0){slider_i=slider_count;}
+		//p
+		$(".slider_p_div").hide();
+		$("#slider_p"+slider_i).show();
+		//p end
+		//hi_btn
+		$(".hi_btn").hide();
+		$("#hi_btn"+slider_i).show();
+		//hi_btn end
+		//btn
+		$(".btnbox img").stop(true,true);
+		$(".btnbox img").removeClass("img_hover");
+		$(".btnbox img").animate({bottom:'0px'},200);
+		$("#btn_img"+slider_i).addClass("img_hover");
+		$("#btn_img"+slider_i).animate({bottom:'10px'},200);
+		//btn end
+		$(".imgbox").stop();
+		$(".imgbox").animate({left:'-750'*slider_i+'px'});
+		if(slider_i<slider_count){
+			slider_i++;	
+		}else{
+			slider_i=0;
+		}
+	}
+}
+
+$(".lbtn").click(function(){
+	m_over=true;
+	if(slider_i==0){slider_i=slider_count-1}else{slider_i=slider_i-2;}
+	zx_slider();
+	m_over=false;
+});
+
+$(".rbtn").click(function(){
+	m_over=true;
+	zx_slider();
+	m_over=false;
+});
+
+function btn_m_over(btn_i){
+	if(slider_i-1!=btn_i){
+		m_over=true;
+		slider_i=btn_i;
+		zx_slider();
+		m_over=false;
+	}
+}
+
+zx_timer=setInterval("zx_slider();",5000); 
+$(".zx_slider").mouseover(function(){
+	m_over=false;
+});
+$(".zx_slider").mouseout(function(){
+	m_over=true;
+});
+</script>
+<div style="text-align:center;clear:both">
+</div>
+</body>
+
+
+</html>
